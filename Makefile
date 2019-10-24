@@ -1,23 +1,27 @@
 NAMEA = libmx.a
 
-INC = inc/libmx.h
-OBJH = obj/libmx.h
+INC = libmx.h
+INCI = inc/libmx.h
 
-SRC = src/mx_printchar.c
-OBJC = obj/mx_printchar.c
-OBJO = obj/mx_printchar.o
+SRC = mx_printchar.c mx_binary_search.c
+SRCS = src/mx_printchar.c src/mx_binary_search.c
+
+OBJ = mx_printchar.o mx_binary_search.o
 
 CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 
 all: install clean
 install:
+	@cp $(SRCS) .
+	@cp $(INCI) .
+	@clang $(CFLAGS) -c $(SRC) -I $(INC)
+	@ar rcs $(NAMEA) $(OBJ)
 	@mkdir obj
-	@cp $(SRC) ./obj
-	@cp $(INC) ./obj
-	@clang $(CFLAGS) -o $(OBJO) -c $(OBJC) -I $(OBJH)
-	@ar rcs $(NAMEA) $(OBJO)
+	@mv $(OBJ) ./obj
 uninstall: clean
 	@rm -rf $(NAMEA)
-clean:
 	@rm -rf ./obj
+clean:
+	@rm -rf $(INC)
+	@rm -rf $(SRC)
 reinstall: uninstall all
