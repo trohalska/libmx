@@ -4,7 +4,7 @@ char *mx_strncpy(char *dst, const char *src, int len) {
     int i = 0;
     if(!*src)
         return 0;
-    while (str[i] && i < len) {
+    while (src[i] && i < len) {
         dst[i] = src[i];      
         i++;
     }

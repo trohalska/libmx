@@ -6,8 +6,8 @@ char *mx_strcat(char *restrict s1, const char *restrict s2) {
     if (s2) {
         while (s2[j] != '\0') {
             s1[i] = s2[j];
-            s1++;
-            s2++;
+            i++;
+            j++;
         }
         s1[i] = '\0';  
     }

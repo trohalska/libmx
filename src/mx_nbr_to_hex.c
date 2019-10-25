@@ -1,4 +1,4 @@
-#include "nbr_to_hex.h"
+#include "libmx.h"
 
 char *mx_nbr_to_hex(unsigned long nbr) { // 495
 	unsigned long n = 1;

@@ -3,10 +3,27 @@ NAMEA = libmx.a
 INC = libmx.h
 INCI = inc/libmx.h
 
-SRC = mx_printchar.c mx_binary_search.c
-SRCS = src/mx_printchar.c src/mx_binary_search.c
+SRC = mx_binary_search.c mx_bubble_sort.c mx_count_substr.c mx_count_words.c mx_del_strarr.c mx_foreach.c \
+mx_get_substr_index.c mx_hex_to_nbr.c mx_isspace.c mx_itoa.c mx_nbr_to_hex.c mx_pow.c mx_print_strarr.c \
+mx_printchar.c mx_printint.c mx_printstr.c mx_quick_sort.c mx_sqrt.c mx_str_reverse.c mx_strcat.c mx_strcmp.c \
+mx_strcpy.c mx_strdel.c mx_strdup.c mx_strndup.c mx_strlen.c mx_strncpy.c mx_strnew.c mx_strstr.c mx_strtrim.c \
+mx_swap_char.c mx_del_extra_spaces.c mx_count_words_isspace.c mx_strsplit.c mx_strjoin.c mx_file_to_str.c \
+mx_replace_substr.c
 
-OBJ = mx_printchar.o mx_binary_search.o
+SRCS = src/mx_binary_search.c src/mx_bubble_sort.c src/mx_count_substr.c src/mx_count_words.c src/mx_del_strarr.c \
+src/mx_foreach.c src/mx_get_substr_index.c src/mx_hex_to_nbr.c src/mx_isspace.c src/mx_itoa.c src/mx_nbr_to_hex.c \
+src/mx_pow.c src/mx_print_strarr.c src/mx_printchar.c src/mx_printint.c src/mx_printstr.c src/mx_quick_sort.c \
+src/mx_sqrt.c src/mx_str_reverse.c src/mx_strcat.c src/mx_strcmp.c src/mx_strcpy.c src/mx_strdel.c src/mx_strdup.c \
+src/mx_strndup.c src/mx_strlen.c src/mx_strncpy.c src/mx_strnew.c src/mx_strstr.c src/mx_strtrim.c src/mx_swap_char.c \
+src/mx_del_extra_spaces.c src/mx_count_words_isspace.c src/mx_strsplit.c src/mx_strjoin.c src/mx_file_to_str.c \
+src/mx_replace_substr.c
+
+OBJ = mx_binary_search.o mx_bubble_sort.o mx_count_substr.o mx_count_words.o mx_del_strarr.o mx_foreach.o \
+mx_get_substr_index.o mx_hex_to_nbr.o mx_isspace.o mx_itoa.o mx_nbr_to_hex.o mx_pow.o mx_print_strarr.o \
+mx_printchar.o mx_printint.o mx_printstr.o mx_quick_sort.o mx_sqrt.o mx_str_reverse.o mx_strcat.o mx_strcmp.o \
+mx_strcpy.o mx_strdel.o mx_strdup.o mx_strndup.o mx_strlen.o mx_strncpy.o mx_strnew.o mx_strstr.o mx_strtrim.o \
+mx_swap_char.o mx_del_extra_spaces.o mx_count_words_isspace.o mx_strsplit.o mx_strjoin.o mx_file_to_str.o \
+mx_replace_substr.o
 
 CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 
@@ -18,10 +35,10 @@ install:
 	@ar rcs $(NAMEA) $(OBJ)
 	@mkdir obj
 	@mv $(OBJ) ./obj
-uninstall: clean
+uninstall:
 	@rm -rf $(NAMEA)
 	@rm -rf ./obj
 clean:
-	@rm -rf $(INC)
-	@rm -rf $(SRC)
+	#@rm $(INC)
+	@rm $(SRC)
 reinstall: uninstall all
