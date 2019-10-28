@@ -1,8 +1,9 @@
 #include "libmx.h"
 
 int main () {
-    char s[] = "jjjjjooooodddddkkkkk";
-    printf("%s\n", mx_memcpy(s, "hello world", 6));
+    char s[] = "";
+    char v[] = "123456";
+    printf("%s\n", mx_memcpy(s, v, 6));
     return 0;
 }
 
