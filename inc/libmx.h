@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <fcntl.h>
+//#include <string.h>
 typedef struct s_list {
 	void *data;
 	struct s_list *next;

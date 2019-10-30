@@ -195,22 +195,25 @@
 //     return 0;
 // }
 
-// int main () {
-//     char *ptr;
-//     ptr = mx_realloc(NULL, 20);
-//     mx_strcpy(ptr, "Это первая часть, ");
-//     printf("%s\n", ptr);
-//     ptr = mx_realloc(ptr, 100);
-//     mx_strcat(ptr, "Это вторая часть");
-//     printf("%s\n", ptr);
-//     ptr = mx_realloc(ptr, 0);
-//     printf("%s\n", ptr); //null
-// }
-
-int main() {
-    printf("%s", mx_replace_substr("Ururu turu", "ru", "ta"));
-    return 0;
+int main () {
+    char *ptr;
+    ptr = mx_realloc(NULL, 20);
+    mx_strcpy(ptr, "This first, ");
+    printf("%s\n", ptr);
+    ptr = mx_realloc(ptr, 40);
+    // for (int i = 0; i < 10; i++) {
+    //     printf("%c", ptr[i]);
+    // }
+    mx_strcat(ptr, "This second, ");    
+    printf("%s\n", ptr);
+    ptr = mx_realloc(ptr, 0);
+    printf("%s\n", ptr); //null
 }
+
+// int main() {
+//     printf("%s", mx_replace_substr("Ururu turu", "ru", "ta"));
+//     return 0;
+// }
 
 // int main() {
 //     /*char *a = "6";
