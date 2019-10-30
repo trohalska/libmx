@@ -186,29 +186,33 @@
 // int main() {
 //     int fd = open("t.txt", O_RDONLY);
 //     char *line;
-//     int buf_size = 5;
-//     int delim = 'g';
-//     int k = mx_read_line(&line, buf_size, delim, fd);
+//     int k = mx_read_line(&line, 20, 'f', fd);
 //     printf("%d\n", k);
-//     printf("%s", line);
+//     printf("%s\n", line);
+//     int m = mx_read_line(&line, 35, 't', fd);
+//     printf("%d\n", m);
+//     printf("%s\n", line);
+//     int n = mx_read_line(&line, 4, '.', fd);
+//     printf("%d\n", n);
+//     printf("%s\n", line);
 //     close(fd);
 //     return 0;
 // }
 
-int main () {
-    char *ptr;
-    ptr = mx_realloc(NULL, 20);
-    mx_strcpy(ptr, "This first, ");
-    printf("%s\n", ptr);
-    ptr = mx_realloc(ptr, 40);
-    // for (int i = 0; i < 10; i++) {
-    //     printf("%c", ptr[i]);
-    // }
-    mx_strcat(ptr, "This second, ");    
-    printf("%s\n", ptr);
-    ptr = mx_realloc(ptr, 0);
-    printf("%s\n", ptr); //null
-}
+// int main () {
+//     char *ptr;
+//     ptr = mx_realloc(NULL, 20);
+//     mx_strcpy(ptr, "This first, ");
+//     printf("%s\n", ptr);
+//     ptr = mx_realloc(ptr, 40);
+//     // for (int i = 0; i < 10; i++) {
+//     //     printf("%c", ptr[i]);
+//     // }
+//     mx_strcat(ptr, "This second, ");    
+//     printf("%s\n", ptr);
+//     ptr = mx_realloc(ptr, 0);
+//     printf("%s\n", ptr); //null
+// }
 
 // int main() {
 //     printf("%s", mx_replace_substr("Ururu turu", "ru", "ta"));
@@ -292,11 +296,14 @@ int main () {
 // }
 
 // int main(void) {
-//     char str[] = "**Good bye,**Mr.*Anderson.****";
+//     char str[] = "**hello******mr.*Anderson*";
 //     char **p = mx_strsplit(str, '*');
 //     for (int i = 0; p[i]; i++) {
-//         printf("%s/", p[i]);
+//         printf("%s \n", p[i]);
 //     }
+//     // printf("%s \n", p[0]);
+//     // printf("%s \n", p[1]);
+
 // }
 
 // int main() {
