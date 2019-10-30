@@ -6,8 +6,8 @@ void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n) 
     mx_strncpy(s, src, n);
     size_t i = 0;
     while (i < n) {
-        if (s[i] == (char) c) return NULL;
         d[i] = s[i];
+        if (s[i] == (char) c) return &d[i + 1];
         i++;
     }
     free((void *)s);

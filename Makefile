@@ -55,6 +55,7 @@ mx_memchr.c \
 mx_memrchr.c \
 mx_memmem.c \
 mx_memmove.c \
+mx_realloc.c \
 \
 mx_create_node.c \
 mx_pop_back.c \
@@ -118,6 +119,7 @@ src/mx_memchr.c \
 src/mx_memrchr.c \
 src/mx_memmem.c \
 src/mx_memmove.c \
+src/mx_realloc.c \
 \
 src/mx_create_node.c \
 src/mx_pop_back.c \
@@ -180,6 +182,7 @@ mx_memchr.o \
 mx_memrchr.o \
 mx_memmem.o \
 mx_memmove.o \
+mx_realloc.o \
 \
 mx_create_node.o \
 mx_pop_back.o \

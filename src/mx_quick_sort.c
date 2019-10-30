@@ -4,7 +4,7 @@ int partition(char *arr[], int low, int high, int *swap) {
     char *tmp = 0;
     int i = low - 1;
     for (int j = low; j <= high - 1; j++) {
-        if (mx_strcmp(arr[j], arr[high]) < 0) {
+        if (mx_strlen(arr[j]) < mx_strlen(arr[high])) {
             i++;
             tmp = arr[i];
             arr[i] = arr[j];

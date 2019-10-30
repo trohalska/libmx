@@ -5,7 +5,7 @@ char *mx_replace_substr(const char *str, const char *sub, const char *replace) {
     char *n = NULL;
     int len = 0;
     int i = mx_get_substr_index(&str[len], sub);
-    if (i == -2) return NULL;
+    if (i == -2) return (char *)str;
     while (i >= 0) {
         char *tmp = mx_strndup(&str[len], i);
         n = mx_strjoin(n, tmp);

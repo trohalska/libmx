@@ -40,7 +40,7 @@
 
 // int main() {
 //     char *s = "hello world";
-//     char *c = "rlp";
+//     char *c = "rld";
 //     printf("%d\n", mx_get_substr_index(s, c));
 // }
 
@@ -66,9 +66,10 @@
 // }
 
 // int main () {
-//     char d[] = "99999999999999";
+//     char d[] = "987654321987654321";
 //     char s[] = "0123456789";
-//     printf("%s\n", mx_memccpy(d, s, 'f', 7));
+//     printf("%s\n", mx_memccpy(d, s, '5', 7));
+//     printf("%s\n", d);
 //     return 0;
 // }
 
@@ -195,22 +196,21 @@
 // }
 
 // int main () {
-//     //char s[] = "";
-//     char *v = "123456";
-//     v = (char *) mx_realloc(v, 20);
-//     mx_strncpy(&v[6], &v[0], 5);
-    
-//     printf("%s\n", v);
-//     return 0;
+//     char *ptr;
+//     ptr = mx_realloc(NULL, 20);
+//     mx_strcpy(ptr, "Это первая часть, ");
+//     printf("%s\n", ptr);
+//     ptr = mx_realloc(ptr, 100);
+//     mx_strcat(ptr, "Это вторая часть");
+//     printf("%s\n", ptr);
+//     ptr = mx_realloc(ptr, 0);
+//     printf("%s\n", ptr); //null
 // }
 
-// int main() {
-//     //char *a = "Ururu turu";
-//     //char *b = "ru";
-//     //char *c = "ta";
-//     printf("%s", mx_replace_substr("Ururu turu", "ru", "ta"));
-//     return 0;
-// }
+int main() {
+    printf("%s", mx_replace_substr("Ururu turu", "ru", "ta"));
+    return 0;
+}
 
 // int main() {
 //     /*char *a = "6";
