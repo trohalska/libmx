@@ -14,6 +14,7 @@ mx_get_char_index.c \
 mx_get_substr_index.c \
 mx_hex_to_nbr.c \
 mx_isspace.c \
+mx_cmp.c \
 mx_itoa.c \
 mx_nbr_to_hex.c \
 mx_pow.c \
@@ -76,6 +77,7 @@ src/mx_get_char_index.c \
 src/mx_get_substr_index.c \
 src/mx_hex_to_nbr.c \
 src/mx_isspace.c \
+src/mx_cmp.c \
 src/mx_itoa.c \
 src/mx_nbr_to_hex.c \
 src/mx_pow.c \
@@ -137,6 +139,7 @@ mx_get_char_index.o \
 mx_get_substr_index.o \
 mx_hex_to_nbr.o \
 mx_isspace.o \
+mx_cmp.o \
 mx_itoa.o \
 mx_nbr_to_hex.o \
 mx_pow.o \
@@ -199,8 +202,8 @@ install:
 	@mv $(OBJ) ./obj
 uninstall:
 	@rm -rf $(NAMEA)
-clean:
 	@rm -rf ./obj
+clean:
 	@rm $(INC)
 	@rm $(SRC)
 reinstall: uninstall all
