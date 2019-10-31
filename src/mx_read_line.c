@@ -2,29 +2,27 @@
 
 int mx_read_line(char **lineptr, int buf_size, char delim, const int fd) {
     if (fd < 0) return -1;
-    char *p = NULL;
-    char buf[1];
+    if (buf_size == 0) return 0;
+    *lineptr = mx_strnew(buf_size);
+    char buf = '\0';
     int k = 0;
     int i = 0;
-    int n = read(fd, buf, 1);
+    int n = read(fd, &buf, sizeof(buf));
     while (n > 0) {
-        char *line = malloc(buf_size + 1);
+        char *line = mx_strnew(buf_size);
         for (i = 0; i < buf_size && n > 0; i++) {
-            if (buf[0] == delim) {
+            if (buf == delim) {
                 line[i] = '\0';
                 *lineptr = mx_strjoin(*lineptr, line);
                 free(line);
                 return k;
             }
-            line[i] = buf[0];
+            line[i] = buf;
             k++;
-            n = read(fd, buf, 1);
+            n = read(fd, &buf, sizeof(buf));
         }
-        line[i] = '\0';
-        //*lineptr = mx_strjoin(*lineptr, line);
-        p = mx_strjoin(p, line);
+        *lineptr = mx_strjoin(*lineptr, line);
         free(line);
     }
-    *lineptr = p;
     return k;
 }

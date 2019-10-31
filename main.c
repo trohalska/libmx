@@ -174,27 +174,47 @@
 //     return 0;
 // }
 
-// int main() {
-//     char *s[] = {"Michelangelo", "Donatello", "Leonardo", "Raphael"};
-//     printf("%d\t", mx_quick_sort(s, 0, 3));
-//     for (int i = 0; i <= 3; i++) {
-//         printf("%s ", s[i]);
-//     }
-//     return 0;
-// }
+int main() {
+    //char *s[] = {"Michelangelo", "Donatello", "Leonardo", "Raphael"};
+    char *s[] = {"666666", "333", "999999999", "1", "88888888", "4444", "55555", "7777777", "22"};
+    for (int i = 0; i <= 8; i++) {
+        printf("%s ", s[i]);
+    }
+    printf("%c", '\n');
+    printf("%d\n", mx_quick_sort(s, 0, 8));
+    for (int i = 0; i <= 8; i++) {
+        printf("%s ", s[i]);
+    }
+    return 0;
+}
 
 // int main() {
-//     int fd = open("t.txt", O_RDONLY);
+//     int fd = open("frag", O_RDONLY);
 //     char *line;
+
 //     int k = mx_read_line(&line, 20, 'f', fd);
 //     printf("%d\n", k);
 //     printf("%s\n", line);
 //     int m = mx_read_line(&line, 35, 't', fd);
 //     printf("%d\n", m);
 //     printf("%s\n", line);
+//     int o = mx_read_line(&line, 0, '0', fd);
+//     printf("%d\n", o);
+//     printf("%s\n", line);
 //     int n = mx_read_line(&line, 4, '.', fd);
 //     printf("%d\n", n);
 //     printf("%s\n", line);
+    
+//     // int n = mx_read_line(&line, 4, '}', fd);
+//     // printf("%d\n", n);
+//     // printf("%s\n", line);
+//     // for (int i = 0; line[i]; i++) {
+//     //     if (line[i] == '\n') {
+//     //         printf("%d", '\n');
+//     //     }
+//     //     printf("%d/", line[i]);
+//     // } 
+
 //     close(fd);
 //     return 0;
 // }

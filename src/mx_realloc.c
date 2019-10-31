@@ -9,10 +9,10 @@ void *mx_realloc(void *ptr, size_t size) {
         return ptr;
     }
     if (ptr == NULL) {
-        d = malloc(size * sizeof(ptr));
+        d = malloc(size * sizeof(char));
     }
     else {
-        d = malloc(size * sizeof(ptr));
+        d = malloc(size * sizeof(char));
         if (d == NULL) return NULL;
         size_t i = 0;
         for (i = 0; c[i] && i < size; i++) {

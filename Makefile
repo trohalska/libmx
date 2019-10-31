@@ -195,7 +195,7 @@ mx_printlist.o
 
 CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 
-all: install clean
+all: install
 install:
 	@cp $(SRCS) .
 	@cp $(INCI) .
@@ -205,8 +205,8 @@ install:
 	@mv $(OBJ) ./obj
 uninstall:
 	@rm -rf $(NAMEA)
-	@rm -rf ./obj
 clean:
+	@rm -rf ./obj
 	@rm $(INC)
 	@rm $(SRC)
-reinstall: uninstall all
+reinstall: uninstall install clean
