@@ -174,19 +174,19 @@
 //     return 0;
 // }
 
-int main() {
-    //char *s[] = {"Michelangelo", "Donatello", "Leonardo", "Raphael"};
-    char *s[] = {"666666", "333", "999999999", "1", "88888888", "4444", "55555", "7777777", "22"};
-    for (int i = 0; i <= 8; i++) {
-        printf("%s ", s[i]);
-    }
-    printf("%c", '\n');
-    printf("%d\n", mx_quick_sort(s, 0, 8));
-    for (int i = 0; i <= 8; i++) {
-        printf("%s ", s[i]);
-    }
-    return 0;
-}
+// int main() {
+//     //char *s[] = {"Michelangelo", "Donatello", "Leonardo", "Raphael"};
+//     char *s[] = {"666666", "333", "999999999", "1", "88888888", "4444", "55555", "7777777", "22"};
+//     for (int i = 0; i <= 8; i++) {
+//         printf("%s ", s[i]);
+//     }
+//     printf("%c", '\n');
+//     printf("%d\n", mx_quicksort(s, 0, 8));
+//     for (int i = 0; i <= 8; i++) {
+//         printf("%s ", s[i]);
+//     }
+//     return 0;
+// }
 
 // int main() {
 //     int fd = open("frag", O_RDONLY);
@@ -239,24 +239,24 @@ int main() {
 //     return 0;
 // }
 
-// int main() {
-//     /*char *a = "6";
-//     char *b = "4";
-//     char *c = "8";
-//     char *d = "2";*/
-//     t_list *head = mx_create_node("ma");
-//     t_list *s1 = mx_create_node("pa");
-//     t_list *s2 = mx_create_node("son");
-//     t_list *s3 = mx_create_node("daugter");
-//     head->next = s1;
-//     s1->next = s2;
-//     s2->next = s3;
-//     mx_printlist(head);
-//     printf("\n");
-//     t_list *f = mx_sort_list(head, mx_cmp);
-//     mx_printlist(f);
-//     return 0;
-// }
+int main() {
+    /*char *a = "6";
+    char *b = "4";
+    char *c = "8";
+    char *d = "2";*/
+    t_list *head = mx_create_node("ma");
+    t_list *s1 = mx_create_node("pa");
+    t_list *s2 = mx_create_node("son");
+    t_list *s3 = mx_create_node("daugter");
+    head->next = s1;
+    s1->next = s2;
+    s2->next = s3;
+    mx_printlist(head);
+    printf("\n");
+    t_list *f = mx_sort_list(head, mx_cmp);
+    mx_printlist(f);
+    return 0;
+}
 
 // int main(void) {
 //     char str[] = "game over";

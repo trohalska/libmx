@@ -4,7 +4,7 @@ int partition(char *arr[], int low, int high, int *swap) {
     char *tmp = 0;
     int i = low - 1;
     for (int j = low; j <= high - 1; j++) {
-        if (mx_strcmp(arr[j], arr[high]) < 0) {
+        if (mx_strlen(arr[j]) < mx_strlen(arr[high])) {
             i++;
             tmp = arr[i];
             arr[i] = arr[j];
@@ -20,13 +20,13 @@ int partition(char *arr[], int low, int high, int *swap) {
     return i;
 }
 
-int mx_quick_sort(char **arr, int left, int right) {
+int mx_quicksort(char **arr, int left, int right) {
     if (!arr) return -1;
     int swap = 0;
     if (left < right) {
         int p = partition(arr, left, right, &swap);
-        swap += mx_quick_sort(arr, left, p - 1);
-        swap += mx_quick_sort(arr, p + 1, right);
+        swap += mx_quicksort(arr, left, p - 1);
+        swap += mx_quicksort(arr, p + 1, right);
     }    
     return swap;
 }

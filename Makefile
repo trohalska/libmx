@@ -23,7 +23,7 @@ mx_printchar.c \
 mx_print_unicode.c \
 mx_printint.c \
 mx_printstr.c \
-mx_quick_sort.c \
+mx_quicksort.c \
 mx_sqrt.c \
 mx_str_reverse.c \
 mx_strcat.c \
@@ -87,7 +87,7 @@ src/mx_printchar.c \
 src/mx_print_unicode.c \
 src/mx_printint.c \
 src/mx_printstr.c \
-src/mx_quick_sort.c \
+src/mx_quicksort.c \
 src/mx_sqrt.c \
 src/mx_str_reverse.c \
 src/mx_strcat.c \
@@ -150,7 +150,7 @@ mx_printchar.o \
 mx_print_unicode.o \
 mx_printint.o \
 mx_printstr.o \
-mx_quick_sort.o \
+mx_quicksort.o \
 mx_sqrt.o \
 mx_str_reverse.o \
 mx_strcat.o \
@@ -195,7 +195,7 @@ mx_printlist.o
 
 CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 
-all: install
+all: install clean
 install:
 	@cp $(SRCS) .
 	@cp $(INCI) .
@@ -205,8 +205,8 @@ install:
 	@mv $(OBJ) ./obj
 uninstall:
 	@rm -rf $(NAMEA)
-clean:
 	@rm -rf ./obj
+clean:
 	@rm $(INC)
 	@rm $(SRC)
-reinstall: uninstall install clean
+reinstall: uninstall all

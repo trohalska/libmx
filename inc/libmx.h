@@ -27,13 +27,13 @@ void mx_print_strarr(char **arr, const char *delim);
 void mx_printint(int n);
 double mx_pow(double n, unsigned int pow);
 int mx_sqrt(int x);
-char *mx_nbr_to_hex(unsigned long nbr); // check
+char *mx_nbr_to_hex(unsigned long nbr);
 unsigned long mx_hex_to_nbr(const char *hex);
 char *mx_itoa(int number);
 void mx_foreach(int *arr, int size, void (*f)(int));
 int mx_binary_search(char **arr, int size, const char *s, int *count);
 int mx_bubble_sort(char **arr, int size);
-int mx_quick_sort(char **arr, int left, int right);
+int mx_quicksort(char **arr, int left, int right);
 
 //---------------------------------- string pack - 24
 int mx_strlen(const char *s);
@@ -64,7 +64,7 @@ char *mx_replace_substr(const char *str, const char *sub, const char *replace);
 //---------------------------------- memory pack - 9
 void *mx_memset(void *b, int c, size_t len);
 void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
-/*на с видає вказівник на наступний елемент*/void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
 int mx_memcmp(const void *s1, const void *s2, size_t n);
 void *mx_memchr(const void *s, int c, size_t n);
 void *mx_memrchr(const void *s, int c, size_t n);
