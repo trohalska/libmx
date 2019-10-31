@@ -1,7 +1,7 @@
 #include "libmx.h"
 
 int mx_count_words(const char *str, char c) {
-    if (!str || !*str) return -1;
+    if (!str) return -1; // в пдф повинно вертати нічого?????
     int s = 0;
     while (*str != '\0') {
         // if not word

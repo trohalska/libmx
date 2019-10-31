@@ -1,14 +1,15 @@
 #include "inc/libmx.h"
+#include <string.h>
 
 // int main() {
-//     char *s = NULL;
+//     char *s = "yoyoyoyo";
 //     char *c = "yo";
 //     printf("%d\n", mx_count_substr(s, c));
 // }
 
 // int main() {
 //     //char *s = "  follow  *   the  white rabbit ";
-//     char *s = NULL;
+//     char *s = "";
 //     printf("%d\n", mx_count_words(s, ' '));
 // }
 
@@ -19,7 +20,7 @@
 // }
 
 // int main(void) {
-//     char *name = "\f  My name...     is  \r Neo  \t\n ";
+//     char *name = "\f  My name...\n     is  \r \nNeo  \t\n ";
 //     char *s = mx_del_extra_spaces(name);
 //     printf("\"%s\"\n", s);
 //     //printf("%c", s[26]);
@@ -94,17 +95,20 @@
 // }
 
 // int main () {
-//     char s1[] = "Trinity";
-//     char s2[] = "i";
-//     printf("%s\n", mx_memmem(s1, 7, s2, 1));
+//     char s1[] = "7R8FeGZJEH9    WEy4i9BcMw1BWsZk";
+//     char s2[] = "GZ";
+//     int j = 70;
+//     int i = 2;
+//     printf("%s\n", mx_memmem(s1, j, s2, i));
+//     printf("%s\n", memmem(s1, j, s2, i));
 //     return 0;
 // }
 
-// int main () {
-//     char s1[] = "Trinity";
-//     printf("%s\n", mx_memmove(&s1[2], &s1[0], 3)); //trity
-//     return 0;
-// }
+int main () {
+    char s1[] = "Trinity";
+    printf("%s\n", mx_memmove(&s1[2], &s1[0], 3)); //trity
+    return 0;
+}
 
 // int main () {
 //     char s1[] = "Trinity";
@@ -144,6 +148,7 @@
 //     char *s[] = {"mama", "myla", "ramu", "ramu", "myla", "ramu", "ramu", NULL};
 //     char delim = '*';
 //     mx_print_strarr(s, &delim);
+
 //     return 0;
 // }
 
@@ -164,6 +169,11 @@
 //     head->next = s1;
 //     mx_push_back(&head, c);
 //     mx_printlist(head);
+//     return 0;
+// }
+
+// int main() {
+//     printf("%s\n", mx_nbr_to_hex(4294967295));
 //     return 0;
 // }
 
@@ -235,28 +245,28 @@
 // }
 
 // int main() {
-//     printf("%s", mx_replace_substr("Ururu turu", "ru", "ta"));
+//     printf("%s", mx_replace_substr("Ururuturu", "rur", "ru"));
 //     return 0;
 // }
 
-int main() {
-    /*char *a = "6";
-    char *b = "4";
-    char *c = "8";
-    char *d = "2";*/
-    t_list *head = mx_create_node("ma");
-    t_list *s1 = mx_create_node("pa");
-    t_list *s2 = mx_create_node("son");
-    t_list *s3 = mx_create_node("daugter");
-    head->next = s1;
-    s1->next = s2;
-    s2->next = s3;
-    mx_printlist(head);
-    printf("\n");
-    t_list *f = mx_sort_list(head, mx_cmp);
-    mx_printlist(f);
-    return 0;
-}
+// int main() {
+//     /*char *a = "6";
+//     char *b = "4";
+//     char *c = "8";
+//     char *d = "2";*/
+//     t_list *head = mx_create_node("ma");
+//     t_list *s1 = mx_create_node("pa");
+//     t_list *s2 = mx_create_node("son");
+//     t_list *s3 = mx_create_node("daugter");
+//     head->next = s1;
+//     s1->next = s2;
+//     s2->next = s3;
+//     mx_printlist(head);
+//     printf("\n");
+//     t_list *f = mx_sort_list(head, mx_cmp);
+//     mx_printlist(f);
+//     return 0;
+// }
 
 // int main(void) {
 //     char str[] = "game over";
@@ -316,13 +326,18 @@ int main() {
 // }
 
 // int main(void) {
-//     char str[] = "**hello******mr.*Anderson*";
-//     char **p = mx_strsplit(str, '*');
-//     for (int i = 0; p[i]; i++) {
-//         printf("%s \n", p[i]);
-//     }
-//     // printf("%s \n", p[0]);
+//     char str[] = "xxM2lSLHTVkMKHRhDQt\ncjADTb4\nKthcCp16JpaU8lu3262FUxw3Ll6CSWce59DrPc\tXsArqnba9h wY8R\n\n\nyY\n\n\nqGhCOCYUuUNG QasV5TV\x96\x7f\n\n\n0XHsf\n";
+//     //char str[] = "";
+//     char **p = mx_strsplit(str, '\n');
+//     // for (int i = 0; p[i]; i++) {
+//     //     printf("%s \n", p[i]);
+//     // }
+//     printf("%s \n", p[0]);
 //     // printf("%s \n", p[1]);
+//     char **s = strsplit(str, '\n');
+//     for (int i = 0; s[i]; i++) {
+//         printf("%s", s[i]);
+//     }
 
 // }
 

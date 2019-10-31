@@ -3,14 +3,17 @@
 void *mx_memmove(void *dst, const void *src, size_t len) {
     if (!dst || !src || len < 0) return NULL;
     char *d = dst;
-    char *s = malloc (len * sizeof(src));
-    if (s == NULL) return NULL;
-    mx_strncpy(s, src, len);
+    const char *s = src;
+    if (!s) return NULL;
+    char tmp[len];
+    mx_strncpy(tmp, src, len);
+    // for (size_t i = 0; i < len; i++) {
+    //     tmp[i] = s[i];
+    // }
     int i = 0;
-    while (s[i]) {
-        d[i] = s[i];
+    while (tmp[i]) {
+        d[i] = tmp[i];
         i++;
     }
-    free((void *)s);
     return dst;
 }

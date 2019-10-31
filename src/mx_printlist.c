@@ -3,8 +3,9 @@
 void mx_printlist(t_list *list) {
     t_list *q = list;
     while (q->next != NULL) {    
-        printf("%s ", q->data);
+        mx_printstr(q->data);
+        mx_printstr(" ");
         q = q->next;
     }
-    printf("%s ", q->data); 
+    mx_printstr(q->data); 
 }
