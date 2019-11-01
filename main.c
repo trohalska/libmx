@@ -1,6 +1,8 @@
 #include "inc/libmx.h"
 #include <string.h>
 
+// printf("%zu\n", malloc_size(mx_strtrim(name)));
+
 void mx_printlist(t_list *list) {
     t_list *q = list;
     while (q->next != NULL) {    
@@ -30,17 +32,19 @@ void mx_printlist(t_list *list) {
 // }
 
 // int main(void) {
+//     //char *name = "\f hello hell\t\n ";
 //     char *name = "\f  My name...\n     is  \r \nNeo  \t\n ";
 //     char *s = mx_del_extra_spaces(name);
 //     printf("\"%s\"\n", s);
+//     printf("%zu\n", malloc_size(s));
 //     //printf("%c", s[26]);
-//     //printf("%s\n", mx_concat_words(NULL)); //returns NULL
 //     return 0;
 // }
 
 // int main(){
 //     char *c = "t.txt";
 //     printf("%s\n", mx_file_to_str(c));
+//     printf("%zu\n", malloc_size(mx_file_to_str(c)));
 //     return 0;
 // }
 
@@ -244,14 +248,17 @@ void mx_printlist(t_list *list) {
 //     ptr = mx_realloc(NULL, 20);
 //     mx_strcpy(ptr, "This first, ");
 //     printf("%s\n", ptr);
+//     printf("%zu\n", malloc_size(ptr));
 //     ptr = mx_realloc(ptr, 40);
 //     // for (int i = 0; i < 10; i++) {
 //     //     printf("%c", ptr[i]);
 //     // }
 //     mx_strcat(ptr, "This second, ");    
 //     printf("%s\n", ptr);
+//     printf("%zu\n", malloc_size(ptr));
 //     ptr = mx_realloc(ptr, 0);
-//     printf("%s\n", ptr); //null
+//     printf("%s\n", ptr);
+//     printf("%zu\n", malloc_size(ptr));
 // }
 
 // int main() {
@@ -330,8 +337,10 @@ void mx_printlist(t_list *list) {
 
 // int main() {
 //     char *s = "hello kajdbhkjfdg;kfajb;ksg";
-//     char *d = mx_strndup(s, 10);
-//     printf("%s", d);
+//     //char *s = "";
+//     char *d = mx_strndup(s, 0);
+//     printf("%s\n", d);
+//     printf("%zu\n", malloc_size(d));
 //     return 0;
 // }
 
@@ -348,19 +357,18 @@ void mx_printlist(t_list *list) {
 //     for (int i = 0; s[i]; i++) {
 //         printf("%s", s[i]);
 //     }
-
 // }
 
 // int main() {
 //     char *s = "hello world";
-//     char *c = "w";
+//     char *c = "";
 //     printf("%s\n", mx_strstr(s, c));
 // }
 
 // int main(void) {
-//     char *name = "\f My name... is Neo \t\n ";
-//     printf("%s\n", mx_strtrim(name)); //returns "Free your mind."
-//     //printf("%s\n", mx_concat_words(NULL)); //returns NULL
+//     char *name = "  \n\t\r  ";
+//     printf("%s\n", mx_strtrim(name));
+//     printf("%zu\n", malloc_size(mx_strtrim(name)));
 //     return 0;
 // }
 

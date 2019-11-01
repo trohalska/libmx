@@ -1,16 +1,14 @@
 #include "libmx.h"
 
 char *mx_del_extra_spaces(const char *str) {
-	if (!str) return NULL;
+	if (!str) return malloc(0);
 
 	char *n = mx_strtrim(str);
-	if (n == NULL) return NULL;
 
 	int kwl = 0;
 	int w = mx_count_words_isspace(str, &kwl);
 
 	char *t = mx_strnew(kwl + w - 2);
-	if (t == NULL) return NULL;
 
 	int i = 0;
 	int j = 0;
@@ -23,7 +21,8 @@ char *mx_del_extra_spaces(const char *str) {
 		if (n[i]) {
 			t[j] = ' ';
 			j++;
-		}	
+		}
+		else t[j] = '\0';
 		while (mx_isspace(n[i]) && n[i]) {
 			i++;
 		}
