@@ -1,6 +1,7 @@
 #include "libmx.h"
 
 char *mx_file_to_str(const char *file) {
+    if (!file) return NULL;
     int f = open(file, O_RDONLY);
     if (f < 0) return NULL;
     // count bytes

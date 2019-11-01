@@ -1,7 +1,7 @@
 #include "libmx.h"
 
 char *mx_del_extra_spaces(const char *str) {
-	if (!str || !*str) return NULL;
+	if (!str) return NULL;
 
 	char *n = mx_strtrim(str);
 	if (n == NULL) return NULL;

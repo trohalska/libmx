@@ -1,6 +1,6 @@
 #include "libmx.h"
 
-void *mx_memchr(const void *s, int c, size_t n) {
+void *mx_memrchr(const void *s, int c, size_t n) {
     const char *d = s;
     while (n >= 0) {
         n--;

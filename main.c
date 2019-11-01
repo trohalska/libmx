@@ -1,6 +1,16 @@
 #include "inc/libmx.h"
 #include <string.h>
 
+void mx_printlist(t_list *list) {
+    t_list *q = list;
+    while (q->next != NULL) {    
+        mx_printstr(q->data);
+        mx_printstr(" ");
+        q = q->next;
+    }
+    mx_printstr(q->data); 
+}
+
 // int main() {
 //     char *s = "yoyoyoyo";
 //     char *c = "yo";
@@ -69,14 +79,14 @@
 // int main () {
 //     char d[] = "987654321987654321";
 //     char s[] = "0123456789";
-//     printf("%s\n", mx_memccpy(d, s, '5', 7));
+//     printf("%s\n", mx_memccpy(d, s, 's', 7));
 //     printf("%s\n", d);
 //     return 0;
 // }
 
 // int main () {
 //     char s1[] = "01234567890123456789";
-//     printf("%s\n", mx_memchr(s1, 53, 90));
+//     printf("%s\n", mx_memchr(s1, '3', 7));
 //     return 0;
 // }
 
@@ -104,15 +114,15 @@
 //     return 0;
 // }
 
-int main () {
-    char s1[] = "Trinity";
-    printf("%s\n", mx_memmove(&s1[2], &s1[0], 3)); //trity
-    return 0;
-}
-
 // int main () {
 //     char s1[] = "Trinity";
-//     printf("%s\n", mx_memchr(s1, 'i', 7));
+//     printf("%s\n", mx_memmove(&s1[2], &s1[0], 3)); //trity
+//     return 0;
+// }
+
+// int main () {
+//     char s1[] = "Trinitiiiiiyfadlkb";
+//     printf("%s\n", mx_memrchr(s1, 'i', 90));
 //     return 0;
 // }
 
@@ -173,7 +183,7 @@ int main () {
 // }
 
 // int main() {
-//     printf("%s\n", mx_nbr_to_hex(4294967295));
+//     printf("%s\n", mx_nbr_to_hex(9223372036854775807));
 //     return 0;
 // }
 
