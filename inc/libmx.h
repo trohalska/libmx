@@ -75,9 +75,9 @@ void *mx_realloc(void *ptr, size_t size);
 
 //---------------------------------- list pack - 7
 t_list *mx_create_node(void *data);
-void mx_push_front(t_list **list, void *data); //0 fail, check
-void mx_push_back(t_list **list, void *data); //60 s, check
-void mx_pop_front(t_list **head); //60 s, check
+void mx_push_front(t_list **list, void *data);
+void mx_push_back(t_list **list, void *data);
+void mx_pop_front(t_list **head);
 void mx_pop_back(t_list **head);
 int mx_list_size(t_list *list);
 t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *));

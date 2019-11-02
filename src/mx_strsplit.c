@@ -2,26 +2,26 @@
 
 char **mx_strsplit(const char *s, char c) {
     if (!s) return NULL;
-    int k = mx_count_words(s, c);
-    char **res = (char **) malloc((k + 1) * sizeof (char *));
-    int i = 0;
-    int j = 0;
-    while (*s) {
-        if (*s == c) {
-			while (*s == c && *s != '\0')
-				s++;
-        }
-        if (*s != c && *s != '\0') {
-            char *p = (char *) s;
-			while (*s != c && *s != '\0') {
-				j++;
-                s++;
-            }
-            res[i] = mx_strndup(p, j);
-            i++;
-            j = 0;
-        }
+    int size = mx_count_words(s, c);
+    char **res = (char **) malloc((size + 1) * sizeof (char *));
+    int i_res = 0;
+    int i_del = 0;
+    
+    if (size == 1) {
+        res[0] = mx_strdup(s);
+        res[1] = NULL;
+        return res;
     }
-    res[i] = NULL;
+    while (*s) {
+        i_del = mx_get_char_index(s, c);
+        i_del = i_del == -1 ? i_del = mx_strlen(s) : i_del;
+        if (i_del) {
+            res[i_res] = mx_strndup(s, i_del);
+            s += mx_strlen(res[i_res]) - 1;
+            i_res++;
+        }
+        s++;
+    } 
+    res[i_res] = NULL;
     return res;
 }

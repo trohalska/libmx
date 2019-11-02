@@ -9,7 +9,7 @@ char *mx_strtrim(const char *str) {
 		j--;
 	if (i <= j) {
 		char *n;
-		n = mx_strncpy(mx_strnew(j - i), &str[i], j - i);
+		n = mx_strncpy(mx_strnew(j + 1 - i), &str[i], j + 1 - i);
 		return n;
 	}
 	else return malloc(0);
