@@ -15,7 +15,7 @@ void mx_printlist(t_list *list) {
 
 // int main() {
 //     char *s = "yoyoyoyo";
-//     char *c = "yo";
+//     char *c = NULL;
 //     printf("%d\n", mx_count_substr(s, c));
 // }
 
@@ -188,7 +188,7 @@ void mx_printlist(t_list *list) {
 
 // int main() {
 //     //printf("%s\n", mx_nbr_to_hex(9223372036854775807));
-//     printf("%s\n", mx_nbr_to_hex(52));
+//     printf("%s\n", mx_nbr_to_hex(0));
 //     return 0;
 // }
 
@@ -213,36 +213,36 @@ void mx_printlist(t_list *list) {
 //     return 0;
 // }
 
-int main() {
-    int fd = open("frag", O_RDONLY);
-    char *line;
+// int main() {
+//     int fd = open("frag", O_RDONLY);
+//     char *line;
 
-    int k = mx_read_line(&line, 20, 'f', fd);
-    printf("%d\n", k);
-    printf("%s\n", line);
-    // int o = mx_read_line(&line, 0, '0', fd);
-    // printf("%d\n", o);
-    // printf("%s\n", line);
-    int m = mx_read_line(&line, 35, 't', fd);
-    printf("%d\n", m);
-    printf("%s\n", line);
-    int n = mx_read_line(&line, 4, '.', fd);
-    printf("%d\n", n);
-    printf("%s\n", line);
+//     int k = mx_read_line(&line, 20, 'f', fd);
+//     printf("%d\n", k);
+//     printf("%s\n", line);
+//     // int o = mx_read_line(&line, 0, '0', fd);
+//     // printf("%d\n", o);
+//     // printf("%s\n", line);
+//     int m = mx_read_line(&line, 35, 't', fd);
+//     printf("%d\n", m);
+//     printf("%s\n", line);
+//     int n = mx_read_line(&line, 4, '.', fd);
+//     printf("%d\n", n);
+//     printf("%s\n", line);
     
-    // int n = mx_read_line(&line, 4, '}', fd);
-    // printf("%d\n", n);
-    // printf("%s\n", line);
-    // for (int i = 0; line[i]; i++) {
-    //     if (line[i] == '\n') {
-    //         printf("%d", '\n');
-    //     }
-    //     printf("%d/", line[i]);
-    // } 
+//     // int n = mx_read_line(&line, 4, '}', fd);
+//     // printf("%d\n", n);
+//     // printf("%s\n", line);
+//     // for (int i = 0; line[i]; i++) {
+//     //     if (line[i] == '\n') {
+//     //         printf("%d", '\n');
+//     //     }
+//     //     printf("%d/", line[i]);
+//     // } 
 
-    close(fd);
-    return 0;
-}
+//     close(fd);
+//     return 0;
+// }
 
 // int main () {
 //     char *ptr;
@@ -347,11 +347,13 @@ int main() {
 // }
 
 // int main(void) {
-//     char str[] = "xxM2lSLHTVkMKHRhDQt\ncjADTb4\nKthcCp16JpaU8lu3262FUxw3Ll6CSWce59DrPc\tXsArqnba9h wY8R\n\n\nyY\n\n\nqGhCOCYUuUNG QasV5TV\x96\x7f\n\n\n0XHsf\n";
-//     //char str[] = "";
-//     char **p = mx_strsplit(str, '\n');
+//     //char str[] = "xxM2lSLHTVkMKHRhDQt\ncjADTb4\nKthcCp16JpaU8lu3262FUxw3Ll6CSWce59DrPc\tXsArqnba9h wY8R\n\n\nyY\n\n\nqGhCOCYUuUNG QasV5TV\x96\x7f\n\n\n0XHsf\n";
+//     char str[] = "       ";
+//     char **p = mx_strsplit(str, ' ');
+//     printf(":%s: \n", p[0]);
+
 //     for (int i = 0; p[i]; i++) {
-//         printf("%s \n", p[i]);
+//         printf(":%s: \n", p[i]);
 //     }
 //     //printf("%s \n", p[0]);
 //     // printf("%s \n", p[1]);

@@ -1,7 +1,7 @@
 #include "libmx.h"
 
 int mx_count_substr(const char *str, const char *sub) {
-    if (!str || !sub || !*str || !*sub) return -1;
+    if (!str || !sub) return -1;
     char *s = (char *)str;
     int ln = mx_strlen(sub);
     int k = 0;
