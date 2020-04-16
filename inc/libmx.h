@@ -7,18 +7,28 @@
 #include <stdbool.h>
 #include <fcntl.h>
 #include <malloc/malloc.h>
-//#include <string.h>
+
 typedef struct s_list {
 	void *data;
 	struct s_list *next;
 } t_list;
 
-//---------------------------------- MY pack - 5
+//---------------------------------- MY pack
 bool mx_isspace(char c);
+bool mx_isdigit(int c);
+bool mx_isalpha(int c);
 bool mx_cmp(void *a, void *b);
 int mx_count_words_isspace(const char *str, int *kwl);
 int mx_strncmp(const char *s1, const char *s2, int n);
-void mx_printlist(t_list *list);
+void mx_printerr(const char *s);
+int mx_atoi(const char *str);
+
+int **mx_create_matrix(int G, int fillin);
+void mx_del_arr_matrix_int(int ***arr);
+void mx_del_matrix_int(int **str);
+void mx_printarrint(int *arr, int G);
+
+void mx_printspaces(int count);
 
 //---------------------------------- utils pack - 14
 void mx_printchar(char c);
@@ -81,5 +91,8 @@ void mx_pop_front(t_list **head);
 void mx_pop_back(t_list **head);
 int mx_list_size(t_list *list);
 t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *));
+void mx_clear_list(t_list **list);
+void mx_printlist(t_list *list);
+
 
 #endif
